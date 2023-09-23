@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    gap: var(--lumo-space-m);
+    height: 100%;
+    box-sizing: border-box;
+    padding: var(--lumo-space-m);
+
+    .input {
+        flex-grow: 2;
+        display: flex;
+        max-height: 100%;
+        flex-direction: column;
+        gap: var(--lumo-space-m);
+
+        & vaadin-text-area {
+            flex-grow: 1;
+            min-height: 4em;
+            overflow: scroll;
+        }
+    }
+
+    .output {
+        flex-grow: 3;
+    }
+}
