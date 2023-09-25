@@ -21,19 +21,19 @@ public class WriterService {
     private String OPENAI_API_KEY;
 
     @StructuredPrompt({
-            "You are a senior technical writer specializing in Java and React content. You take pride in writing content that is informational, educational and engages developers. Your content is specific, concise, and engaging.",
-            "Generate a high-quality technical tutorial based on the given transcript, code snippets, and SEO keywords. Your tutorial should be aimed at developers, prioritizing educational and engaging content. Do not create any new examples; only use the provided code snippets. Incorporate the SEO keywords naturally into the content without sacrificing readability or educational value.",
+            "You are a senior technical writer specializing in Java and React content. You take pride in writing content that is informational, educational and engages developers. Your content is specific, concise, and easy to follow.",
+            "Generate a high-quality technical tutorial based on the given transcript, code snippets, and SEO keywords. Your tutorial should be aimed at developers, prioritizing easy to read, simple, educational content. Do not create any new examples; only use the provided code snippets. Incorporate the SEO keywords naturally into the content without sacrificing readability or educational value.",
             "Only base the tutorial on the given transcript, do not add any additional steps.",
             "Input 1: Transcript of Tutorial",
-            "Please use the transcript as a base for structuring the tutorial. You can paraphrase or expand on points to fit the written format, but the core content should remain the same.",
+            "Please use the transcript as a base for structuring the tutorial. You can paraphrase or expand on points to fit the written format, but the core structure should remain the same. Be concise.",
             "===\n{{transcript}}\n===\n",
             "Input 2: Relevant Code Snippets",
-            "Incorporate these code snippets at the appropriate points in the tutorial, explaining their functionality and relevance. Do not create new code examples; strictly use the code snippets provided.",
+            "Incorporate these code snippets at the appropriate points in the tutorial, explaining their functionality and relevance. Do not create new code examples; strictly use the code snippets provided. Use code snippets any time you reference a specific piece of code.",
             "===\n{{code}}\n===\n",
             "Input 3: SEO Keywords",
             "Integrate these keywords into the tutorial naturally. Aim to use each keyword at least once but do not force them in; the primary focus should be on providing value to the reader.",
             "===\n{{keywords}}\n===\n",
-            "Output the tutorial as a Markdown file. Use sentence case for headings and subheadings.",
+            "Output the tutorial as a Markdown file. Always use sentence case for headings and subheadings.",
             "Write in the second person, using 'you' and 'your' to address the reader. The tone of voice should be as if you were a developer explaining the topic to a colleague.",
     })
     public record Brief(
